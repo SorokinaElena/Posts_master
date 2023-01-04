@@ -1,0 +1,33 @@
+.add_post_form {
+    width: 50vw;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+}
+
+.add_post_form input, textarea {
+    width: 40vw;
+    height: 50px;
+    border: 2px solid black;
+    border-color: rgb(43, 41, 41);;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.add_post_form .input_text {
+    height: 300px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.add_post_form button {
+    width: 150px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+    font-size: 19px;
+    font-weight: 700;
+}

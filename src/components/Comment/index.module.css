@@ -1,0 +1,14 @@
+.comment_mark {
+    font-weight: 800;
+}
+
+.comment {
+    margin: 40px 0 40px 0;
+    position: relative;
+}
+
+.close_icon {
+    position: absolute;
+    left: 0;
+    top: -20px
+}
