@@ -1,13 +1,11 @@
 import React from 'react'
 import Post from '../Post'
+import {useSelector} from 'react-redux'
 import s from './index.module.css'
-import { useContext } from 'react'
-import { Context } from '../../context'
-
 
 export default function PostsContainer() {
 
-  const {posts} = useContext(Context);
+  const posts = useSelector(state => state.posts)
 
   return (
     <div>
