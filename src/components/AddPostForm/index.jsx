@@ -1,16 +1,19 @@
 import React from 'react'
+import { addPost } from '../../store/reducers/postsReducer'
+import {useDispatch} from 'react-redux'
 import s from './index.module.css'
-import { Context } from '../../context'
-import { useContext } from 'react'
 
 export default function AddPostForm() {
 
-  const {addPost} = useContext(Context)
+  const dispatch = useDispatch()
 
   const form_submit = (event) => {
       event.preventDefault();
       const {title, text} = event.target;
-      addPost(title.value, text.value);
+      dispatch(addPost({
+        title: title.value, 
+        text: text.value
+      }));
       title.value = '';
       text.value = '';
   }

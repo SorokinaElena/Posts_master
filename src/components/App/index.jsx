@@ -19,19 +19,6 @@ function App() {
     localStorage.setItem('posts', JSON.stringify(posts))
   }, [posts]);
 
-  const addPost = (title, text) => {
-    setPosts([...posts, {
-      id: posts.length + 1,
-      title: title,
-      text: text,
-      like: false,
-      like_count: 0,
-      dislike: false,
-      dislike_count: 0,
-      comments: [],
-    }])
-  }
-
   const addComment = (post_id, comment_text) => {
     const comment = {
     id: Date.now(),
@@ -76,7 +63,7 @@ function App() {
 
   return (
     <div className={s.app_container}>
-      <Context.Provider value={{posts, addPost, deletePost, addComment, deleteComment, changeLike, changeDislike}}>
+      <Context.Provider value={{deletePost, addComment, deleteComment, changeLike, changeDislike}}>
         <AddPostForm />
         <PostsContainer />
       </Context.Provider>
