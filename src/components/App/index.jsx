@@ -19,26 +19,6 @@ function App() {
     localStorage.setItem('posts', JSON.stringify(posts))
   }, [posts]);
 
-  const addComment = (post_id, comment_text) => {
-    const comment = {
-    id: Date.now(),
-    comment: comment_text,
-    };
-    const target_post = posts.find(el => el.id === post_id)
-    target_post.comments.push(comment)
-    setPosts([...posts])
-  }
-
-  const deletePost = (id) => {
-    setPosts(posts.filter(el => el.id !== id))
-  }
-
-  const deleteComment = (post_id, comment_id) => {
-    const target_post = posts.find(el => el.id === post_id)
-    target_post.comments = target_post.comments.filter(el => el.id !== comment_id);
-    setPosts([...posts])
-  }
-
   const changeLike = (id) => {
     const target_post = posts.find(el => el.id === id);
     if (target_post.like === false) {
@@ -63,7 +43,7 @@ function App() {
 
   return (
     <div className={s.app_container}>
-      <Context.Provider value={{deletePost, addComment, deleteComment, changeLike, changeDislike}}>
+      <Context.Provider value={{ changeLike, changeDislike}}>
         <AddPostForm />
         <PostsContainer />
       </Context.Provider>
