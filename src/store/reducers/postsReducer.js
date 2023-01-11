@@ -40,7 +40,7 @@ export const postsReducer = (state = defaultState, action) => {
         return [...state]
      } else if (action.type === DELETE_COMMENT) {
         const target_post = state.find(el => el.id === action.payload.post_id)
-        target_post.comments = target_post.comments.filter(el => el.id !== action.payload.id)
+        target_post.comments = target_post.comments.filter(el => el.id !== action.payload.comment_id)
         return [...state]
      } else if (action.type === CHANGE_LIKE) {
         const target_post = state.find(el => el.id === action.payload);

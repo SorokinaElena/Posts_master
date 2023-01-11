@@ -10,7 +10,7 @@ export default function Comment({id, comment, post_id}) {
 
   return (
     <div className={s.comment}>
-      <CloseOutlined className={s.close_icon} onClick={() => dispatch(deleteComment({post_id: post_id, id: id})) }/>
+      <CloseOutlined className={s.close_icon} onClick={() => dispatch(deleteComment({post_id: post_id, comment_id: id})) }/>
       <p> <span className={s.comment_mark}>Comment:</span> {comment} </p>
     </div>
   )
